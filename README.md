@@ -1,19 +1,18 @@
 # Pokédex Web
 
-Aplicación web para gestionar una Pokédex con operaciones CRUD completas.
+Aplicación web para ser usada como Pokédex no permite modificar datos.
 
 ## Descripción
 
-Sistema de gestión de Pokémon desarrollado con Node.js y Express que permite visualizar, buscar, crear, editar y eliminar Pokémon. Incluye una interfaz web interactiva con búsqueda avanzada, filtros por tipo y paginación.
+Sistema de gestión de Pokémon desarrollado con Node.js y Express que permite visualizar y buscar. Incluye una interfaz web interactiva con búsqueda avanzada, filtros por tipo y paginación.
 
 ## Características
 
 - Visualización de Pokémon con tarjetas informativas
 - Búsqueda por nombre, número o tipo
 - Filtros y paginación configurable (12, 21, 51 o todos)
-- Formulario para agregar/editar Pokémon
 - Modal con detalles completos de cada Pokémon
-- API REST para operaciones CRUD
+- API REST para operaciones CRUD//aunque no esta implementada.
 - Validación de nombres únicos
 - Sistema de caché para optimizar rendimiento
 
