@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon</title>
+  <link rel="icon" type="image/png" href="pokeball-incon2.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <img src="612ce4761b9679000402af1c.png" alt="Cartel" class="cartel-logo"><br>
+        <img src="580b57fcd9996e24bc43c325.png" alt="Pikachu" class="pikachu-logo">
+      </h1>
+      <p>Bienvenido al MUNDO POKÉMON</p>
+      <p>Web oficial: <a href="https://www.pokemon.com/es" target="_blank" style="color: white; text-decoration: underline;">https://www.pokemon.com/es</a></p>
+    </header>
+
+    <main>
+      <!-- Sección de búsqueda y filtros -->
+      <section class="filter-section">
+        <h2>Buscar Pokémon</h2>
+        <div class="search-group">
+          <input type="text" id="searchInput" placeholder="Buscar por nombre...">
+          <input type="number" id="searchNumber" placeholder="Buscar por número..." min="1">
+          <select id="searchType" class="type-select">
+            <option value="">Todos los tipos</option>
+          </select>
+          <button class="btn btn-search" id="searchBtn">Buscar</button>
+        </div>
+        <div class="filter-controls">
+          <label>Mostrar:</label>
+          <select id="limitSelect" class="limit-select">
+            <option value="12">12 Pokémon</option>
+            <option value="21">21 Pokémon</option>
+            <option value="51">51 Pokémon</option>
+            <option value="all">Todos</option>
+          </select>
+          <button class="btn btn-secondary" id="showAllBtn">Mostrar lista</button>
+        </div>
+      </section>
+
+      <!-- Sección de formulario -->
+      <section class="form-section" id="formSection" style="display: none;">
+        <h2>Agregar/Editar Pokémon</h2>
+        <button class="btn btn-secondary" id="closeFormBtn" style="float: right; margin-bottom: 10px;">✕ Cerrar</button>
+        <form id="pokemonForm">
+          <div class="form-group">
+            <label for="name">Nombre (Inglés):</label>
+            <input type="text" id="name" name="name" required placeholder="Ej: Pikachu">
+          </div>
+
+          <div class="form-group">
+            <label for="type">Tipo (separados por coma):</label>
+            <input type="text" id="type" name="type" placeholder="Ej: Electric">
+          </div>
+
+          <div class="form-group">
+            <label for="species">Especie:</label>
+            <input type="text" id="species" name="species" placeholder="Ej: Mouse Pokémon">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="3" placeholder="Descripción del Pokémon"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="imageSprite">URL Imagen Sprite:</label>
+            <input type="text" id="imageSprite" name="imageSprite" placeholder="Ej: https://...">
+          </div>
+
+          <div class="form-group">
+            <label for="imageThumbnail">URL Imagen Miniatura:</label>
+            <input type="text" id="imageThumbnail" name="imageThumbnail" placeholder="Ej: https://...">
+          </div>
+
+          <div class="form-group">
+            <label for="imageHires">URL Imagen Alta Resolución:</label>
+            <input type="text" id="imageHires" name="imageHires" placeholder="Ej: https://...">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hp">HP:</label>
+              <input type="number" id="hp" name="hp" min="1" max="255" placeholder="45">
+            </div>
+            <div class="form-group">
+              <label for="attack">Ataque:</label>
+              <input type="number" id="attack" name="attack" min="1" max="255" placeholder="49">
+            </div>
+            <div class="form-group">
+              <label for="defense">Defensa:</label>
+              <input type="number" id="defense" name="defense" min="1" max="255" placeholder="49">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="spAttack">Ataque Esp:</label>
+              <input type="number" id="spAttack" name="spAttack" min="1" max="255" placeholder="65">
+            </div>
+            <div class="form-group">
+              <label for="spDefense">Defensa Esp:</label>
+              <input type="number" id="spDefense" name="spDefense" min="1" max="255" placeholder="65">
+            </div>
+            <div class="form-group">
+              <label for="speed">Velocidad:</label>
+              <input type="number" id="speed" name="speed" min="1" max="255" placeholder="45">
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="reset" class="btn btn-secondary" id="resetBtn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Sección de lista de Pokémon -->
+      <section class="list-section" id="listSection" style="display: none;">
+        <h2>Lista de Pokémon</h2>
+        <div id="pokemonList" class="pokemon-grid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal para ver detalles -->
+    <div id="detailModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="detailContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
